@@ -16,5 +16,6 @@ resource "proxmox_lxc" "basic" {
     name   = "eth0"
     bridge = "vmbr0"
     ip     = "192.168.1.120/24"
+    gw = "192.168.1.1"
   }
 }
