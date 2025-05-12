@@ -1,9 +1,13 @@
 terraform {
   required_providers {
-    virtualbox = {
-      source  = "terra-farm/virtualbox"
-      version = "0.2.2-alpha.1"
+    proxmox = {
+      source  = "telmate/proxmox"
+      version = "3.0.1-rc8"
     }
   }
 }
 
+provider "proxmox" {
+  pm_api_url = "https://192.168.1.100:8006/api2/json"
+  pm_tls_insecure = true # By default Proxmox Virtual Environment uses self-signed certificates.
+}
